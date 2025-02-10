@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Mini Game - Harvesting</h1>
+    <p>Click on the plants to harvest them!</p>
+
+    <div class="garden">
+        <img src="assets/chili.png" class="plant" id="chili">
+        <img src="assets/turmeric.png" class="plant" id="turmeric">
+        <img src="assets/cucumber.png" class="plant" id="cucumber">
+        <img src="assets/carrot.png" class="plant" id="carrot">
+    </div>
+
+    <p id="status">Harvest all crops to continue.</p>
+    <button id="next-btn" style="display:none;" onclick="goToCooking()">Go to Cooking</button>
+
+    <script src="js/game.js"></script>
+</body>
+</html>
