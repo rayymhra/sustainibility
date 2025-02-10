@@ -7,19 +7,28 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="cutscene">
-        <p>[Protagonist] has finished college and is returning home to Cihayam.</p>
-        <img src="assets/bus.png" alt="Bus Scene">
-        <p>Grandma and family are waiting at home...</p>
-        <img src="assets/home.png" alt="Home Scene">
-        <p>"Finally, you're back!" - Grandma</p>
-        <button onclick="startGame()">Continue</button>
+    <div id="cutscene-container">
+        <div class="cutscene-frame fade" id="scene1">
+            <img src="assets/cutscene1.png" alt="Protagonist arriving at the bus terminal">
+            <p>[Protag] telah selesai kuliah dan ia pun pulang ke kampung halamannya...</p>
+        </div>
+        <div class="cutscene-frame" id="scene2">
+            <img src="assets/cutscene2.png" alt="Protagonist riding a public transport">
+            <p>Dia naik angkot menuju desa di atas gunung...</p>
+        </div>
+        <div class="cutscene-frame" id="scene3">
+            <img src="assets/cutscene3.png" alt="Arriving at Grandma's House">
+            <p>Di sana, nenek dan keluarganya sudah menunggunya pulang...</p>
+        </div>
+        <div class="cutscene-frame" id="scene4">
+            <img src="assets/Nenek.png" alt="Grandmother smiling">
+            <p>"Ehh, cucu nenek akhirnya pulang juga!"</p>
+        </div>
     </div>
 
-    <script>
-        function startGame() {
-            window.location.href = 'game.html'; // Moves to the gameplay
-        }
-    </script>
+    <button id="skip-button">Skip</button>
+
+
+    <script src="js/cutscene.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -7,17 +8,26 @@ body {
 }
 
 button {
-    padding: 12px 20px;
-    font-size: 18px;
-    background-color: #f8b400;
-    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    color: #5a3e36;
+    background-color: #ffd1b3; 
+    border: 2px solid #e6b8a2; 
+    border-radius: 30px;
     cursor: pointer;
-    border-radius: 8px;
-    transition: 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #ff9900;
+    background-color: #ffb699;
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .garden, .cooking-area {
@@ -67,4 +77,81 @@ button:hover {
 }
 .hidden {
     display: none !important;
+}
+
+/* HOME */
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    background-image: url(../assets/Backyard_BG.png);
+    background-size: cover;
+    image-rendering: crisp-edges;
+}
+
+.home-info {
+    background-color: rgba(255, 255, 255, 0.363);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.home-info button {
+    margin-top: 20px;
+}
+
+/* CUTSCENE */
+#cutscene-container {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    overflow: hidden; /* Prevents unwanted scroll */
+}
+
+.cutscene-frame {
+    position: absolute;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    opacity: 0; /* All frames are hidden initially */
+    transition: opacity 1s ease-in-out;
+    pointer-events: none; /* Prevent interaction issues */
+}
+
+
+.cutscene-frame img {
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.fade {
+    opacity: 1 !important;
+}
+
+
+/* SKIP BUTTON */
+#skip-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }

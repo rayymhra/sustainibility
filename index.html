@@ -8,15 +8,19 @@
 </head>
 <body>
     <div class="home-container">
-        <h1>Seasoned With Love</h1>
-        <button id="play-btn">Play</button>
-        <p class="credits">Created by Nararya and Rayya</p>
+        <!-- <h1>Seasoned With Love</h1> -->
+         <div class="home-info">
+            <img src="assets/Seasoned-removebg-preview.png" alt="">
+            <button id="play-btn">Play</button>
+            <button onclick="toggleMusic()">Music</button>
+         </div>
+         <p class="credits">Created by Nararya and Rayya</p>
+         
     </div>
 
     <audio id="bg-music" autoplay loop>
         <source src="assets/music.mp3" type="audio/mpeg">
     </audio>
-    <button onclick="toggleMusic()">🎵 Toggle Music</button>
 
     <div id="loading-screen">
         <p>Loading...</p>
