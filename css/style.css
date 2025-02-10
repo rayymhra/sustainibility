@@ -30,7 +30,8 @@ button:active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
-.garden, .cooking-area {
+
+.cooking-area {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -88,7 +89,7 @@ button:active {
     align-items: center;
     height: 100vh;
 
-    background-image: url(../assets/Backyard_BG.png);
+    background-image: url("../assets/Backyard_BG.png");
     background-size: cover;
     image-rendering: crisp-edges;
 }
@@ -154,4 +155,69 @@ button:active {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+}
+
+
+/* GARDEN */
+.game-container {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    background-image: url('../assets/Garden.png');
+    background-size: cover;
+    border: 2px solid #4caf50;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.garden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.plant {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    cursor: grab;
+}
+
+.chili {
+    background-image: url('../assets/chili.png');
+    top: 200px;
+    left: 100px;
+}
+
+.turmeric {
+    background-image: url('../assets/turmeric.png');
+    top: 150px;
+    left: 300px;
+}
+
+.cucumber {
+    background-image: url('../assets/cucumber.png');
+    top: 250px;
+    left: 500px;
+}
+
+
+.basket {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background-color: #8d6e63;
+    border: 2px solid #5d4037; 
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    text-align: center;
 }

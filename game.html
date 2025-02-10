@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Game</title>
+    <title>Harvesting Game</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Mini Game - Harvesting</h1>
-    <p>Click on the plants to harvest them!</p>
+    <div class="game-container">
+       
+        <div class="garden">
+           
+            <div class="plant chili" draggable="true" data-type="chili"></div>
+            <div class="plant turmeric" draggable="true" data-type="turmeric"></div>
+            <div class="plant cucumber" draggable="true" data-type="cucumber"></div>
+        </div>
 
-    <div class="garden">
-        <img src="assets/chili.png" class="plant" id="chili">
-        <img src="assets/turmeric.png" class="plant" id="turmeric">
-        <img src="assets/cucumber.png" class="plant" id="cucumber">
-        <img src="assets/carrot.png" class="plant" id="carrot">
+       
+        <div class="basket" id="basket">
+            <p>Basket</p>
+        </div>
     </div>
-
-    <p id="status">Harvest all crops to continue.</p>
-    <button id="next-btn" style="display:none;" onclick="goToCooking()">Go to Cooking</button>
 
     <script src="js/game.js"></script>
 </body>
