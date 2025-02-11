@@ -2,40 +2,113 @@ document.addEventListener("DOMContentLoaded", function () {
     const basket = document.getElementById("basket");
     const plants = document.querySelectorAll(".plant");
 
+    // Preload drag images
+    const dragImages = {
+        chili: new Image(),
+        turmeric: new Image(),
+        carrot: new Image()
+    };
+
+    dragImages.chili.src = "assets/bunch_of_chili.png";
+    dragImages.turmeric.src = "assets/turmeric.png";
+    dragImages.carrot.src = "assets/carrot.png";
+
     // Add drag event listeners to each plant
     plants.forEach((plant) => {
         plant.addEventListener("dragstart", dragStart);
     });
 
-    // Add drop event listener to the basket
     basket.addEventListener("dragover", dragOver);
     basket.addEventListener("drop", drop);
 
     function dragStart(event) {
-        // Store the type of plant being dragged
-        event.dataTransfer.setData("text/plain", event.target.dataset.type);
+        const plant = event.target.closest(".plant");
+        if (!plant) return;
+    
+        const plantType = plant.dataset.type;
+        const plantState = plant.dataset.state;
+        if (!plantType || !plantState) return;
+    
+        let dragImage = null;
+    
+        switch (plantType) {
+            case "chili":
+                if (plantState === "ready") {
+                    dragImage = dragImages.chili;
+                }
+                break;
+            case "turmeric":
+                if (plantState === "ready") {
+                    dragImage = dragImages.turmeric;
+                }
+                break;
+            case "carrot":
+                if (plantState === "ready") {
+                    dragImage = dragImages.carrot;
+                }
+                break;
+        }
+    
+        if (dragImage) {
+            // Clone the image to resize it
+            const smallDragImage = new Image();
+            smallDragImage.src = dragImage.src;
+            smallDragImage.style.width = "50px"; // Adjust the size here
+            smallDragImage.style.height = "50px";
+    
+            // Append to body to ensure visibility during drag
+            document.body.appendChild(smallDragImage);
+    
+            // Set custom drag image
+            event.dataTransfer.setDragImage(smallDragImage, 15, 15);
+    
+            // Store plant data
+            event.dataTransfer.setData("text/plain", JSON.stringify({ type: plantType, state: plantState }));
+    
+            // Remove after short delay to prevent clutter
+            setTimeout(() => smallDragImage.remove(), 100);
+        }
     }
+    
 
     function dragOver(event) {
-        event.preventDefault(); // Allow dropping
+        event.preventDefault();
     }
 
     function drop(event) {
         event.preventDefault();
-        const plantType = event.dataTransfer.getData("text/plain");
+        const data = event.dataTransfer.getData("text/plain");
+        if (!data) return;
 
-        // Create a harvested item and add it to the basket
-        const harvestedItem = document.createElement("div");
-        harvestedItem.classList.add("harvested-item", plantType);
-        basket.appendChild(harvestedItem);
+        try {
+            const { type: plantType, state: plantState } = JSON.parse(data);
+            if (!plantType || !plantState) return;
 
-        // Remove the plant from the garden
-        const plant = document.querySelector(`.plant[data-type="${plantType}"]`);
-        if (plant) {
-            plant.remove();
+            if (plantState === "ready") {
+                const harvestedItem = document.createElement("img");
+                harvestedItem.src = dragImages[plantType].src;
+                harvestedItem.alt = `Harvested ${plantType}`;
+                harvestedItem.style.width = "50px";
+                harvestedItem.style.height = "50px";
+                basket.appendChild(harvestedItem);
+
+                if (plantType === "turmeric" || plantType === "carrot") {
+                    const plant = document.querySelector(`.plant[data-type="${plantType}"]`);
+                    if (plant) plant.remove();
+                }
+
+                if (plantType === "chili") {
+                    const plant = document.querySelector(`.plant[data-type="chili"]`);
+                    if (plant) {
+                        plant.dataset.state = "bare";
+                        plant.innerHTML = `<img src="assets/Cabai_gundul.png" alt="Bare chili plant">`;
+                    }
+                }
+
+                alert(`You harvested a ${plantType}!`);
+            }
+        } catch (error) {
+            console.error("Error parsing JSON data:", error);
         }
-
-        // Notify the player
-        alert(`You harvested a ${plantType}!`);
     }
 });

@@ -8,17 +8,23 @@
 </head>
 <body>
     <div class="game-container">
-       
+        <!-- Garden Background -->
         <div class="garden">
-           
-            <div class="plant chili" draggable="true" data-type="chili"></div>
-            <div class="plant turmeric" draggable="true" data-type="turmeric"></div>
-            <div class="plant cucumber" draggable="true" data-type="cucumber"></div>
+            <!-- Pre-planted plants -->
+            <div class="plant chili" draggable="true" data-type="chili" data-state="ready">
+                <img src="assets/Cabai_panen.png" alt="Ready-to-harvest chili plant">
+            </div>
+            <div class="plant turmeric" draggable="true" data-type="turmeric" data-state="ready">
+                <img src="assets/Kunyit.png" alt="Ready-to-harvest turmeric">
+            </div>
+            <div class="plant carrot" draggable="true" data-type="carrot" data-state="ready">
+                <img src="assets/carrot.png" alt="Ready-to-harvest carrot">
+            </div>
         </div>
 
-       
+        <!-- Basket -->
         <div class="basket" id="basket">
-            <p>Basket</p>
+            <!-- <img src="assets/basket.png" alt=""> -->
         </div>
     </div>
 
