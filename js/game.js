@@ -1,19 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
     const basket = document.getElementById("basket");
     const plants = document.querySelectorAll(".plant");
+    const popup = document.getElementById("harvest-popup");
+    const nextPhaseBtn = document.getElementById("next-phase-btn");
+    const transitionScreen = document.getElementById("transition-screen");
+    
+    let harvestedCount = 0; // Track harvested items
+    const dragImages = {}; // Store preloaded images
 
-    // Preload drag images
-    const dragImages = {
-        chili: new Image(),
-        turmeric: new Image(),
-        carrot: new Image()
-    };
+    // Preload images and store them
+    function preloadImage(src) {
+        const img = new Image();
+        img.src = src;
+        dragImages[src] = img;
+    }
 
-    dragImages.chili.src = "assets/bunch_of_chili.png";
-    dragImages.turmeric.src = "assets/turmeric.png";
-    dragImages.carrot.src = "assets/carrot.png";
+    preloadImage("assets/bunch_of_chili.png");
+    preloadImage("assets/Cabai_gundul.png");
+    preloadImage("assets/turmeric.png");
+    preloadImage("assets/carrot.png");
 
-    // Add drag event listeners to each plant
     plants.forEach((plant) => {
         plant.addEventListener("dragstart", dragStart);
     });
@@ -24,52 +30,38 @@ document.addEventListener("DOMContentLoaded", function () {
     function dragStart(event) {
         const plant = event.target.closest(".plant");
         if (!plant) return;
-    
+
         const plantType = plant.dataset.type;
         const plantState = plant.dataset.state;
         if (!plantType || !plantState) return;
-    
-        let dragImage = null;
-    
+
+        let dragImageSrc = "";
         switch (plantType) {
             case "chili":
-                if (plantState === "ready") {
-                    dragImage = dragImages.chili;
-                }
+                dragImageSrc = plantState === "ready" 
+                    ? "assets/bunch_of_chili.png" 
+                    : "assets/Cabai_gundul.png";
                 break;
             case "turmeric":
-                if (plantState === "ready") {
-                    dragImage = dragImages.turmeric;
-                }
+                dragImageSrc = "assets/turmeric.png";
                 break;
             case "carrot":
-                if (plantState === "ready") {
-                    dragImage = dragImages.carrot;
-                }
+                dragImageSrc = "assets/carrot.png";
                 break;
         }
-    
-        if (dragImage) {
-            // Clone the image to resize it
-            const smallDragImage = new Image();
-            smallDragImage.src = dragImage.src;
-            smallDragImage.style.width = "50px"; // Adjust the size here
-            smallDragImage.style.height = "50px";
-    
-            // Append to body to ensure visibility during drag
-            document.body.appendChild(smallDragImage);
-    
-            // Set custom drag image
-            event.dataTransfer.setDragImage(smallDragImage, 15, 15);
-    
-            // Store plant data
-            event.dataTransfer.setData("text/plain", JSON.stringify({ type: plantType, state: plantState }));
-    
-            // Remove after short delay to prevent clutter
-            setTimeout(() => smallDragImage.remove(), 100);
+
+        if (dragImageSrc) {
+            const img = new Image();
+            img.src = dragImageSrc;
+            img.width = 100; // Set your desired width
+            img.height = 100; // Set your desired height
+            document.body.appendChild(img); // Append temporarily
+            event.dataTransfer.setDragImage(img, 50, 50);
+            setTimeout(() => document.body.removeChild(img), 0); // Remove after setting
         }
+
+        event.dataTransfer.setData("text/plain", JSON.stringify({ type: plantType, state: plantState }));
     }
-    
 
     function dragOver(event) {
         event.preventDefault();
@@ -86,10 +78,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (plantState === "ready") {
                 const harvestedItem = document.createElement("img");
-                harvestedItem.src = dragImages[plantType].src;
+                harvestedItem.src = `assets/${plantType}.png`;
                 harvestedItem.alt = `Harvested ${plantType}`;
-                harvestedItem.style.width = "50px";
-                harvestedItem.style.height = "50px";
+                harvestedItem.style.width = "80px";
+                harvestedItem.style.height = "80px";
                 basket.appendChild(harvestedItem);
 
                 if (plantType === "turmeric" || plantType === "carrot") {
@@ -105,10 +97,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
 
-                alert(`You harvested a ${plantType}!`);
+                harvestedCount++;
+
+                if (harvestedCount === 3) {
+                    setTimeout(() => {
+                        popup.classList.remove("hidden");
+                    }, 500);
+                }
             }
         } catch (error) {
             console.error("Error parsing JSON data:", error);
         }
     }
+
+    nextPhaseBtn.addEventListener("click", function () {
+        popup.classList.add("hidden");
+        transitionScreen.classList.remove("hidden");
+
+        setTimeout(() => {
+            window.location.href = "planting.html"; // Redirect after transition
+        }, 2000);
+    });
 });

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planting Phase</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="garden">
+            <h2>Time to Plant!</h2>
+            <div class="seed turmeric-seed" draggable="true" data-seed="turmeric">
+                <img src="assets/turmeric_seed.png" alt="Turmeric Seed">
+            </div>
+            <div class="seed carrot-seed" draggable="true" data-seed="carrot">
+                <img src="assets/carrot_seed.png" alt="Carrot Seed">
+            </div>
+            <div class="planting-spot turmeric-spot" data-target="turmeric"></div>
+            <div class="planting-spot carrot-spot" data-target="carrot"></div>
+        </div>
+    </div>
+
+    <script src="planting.js"></script>
+</body>
+</html>

@@ -1,33 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Harvesting Game</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <div class="game-container">
-        <!-- Garden Background -->
-        <div class="garden">
-            <!-- Pre-planted plants -->
-            <div class="plant chili" draggable="true" data-type="chili" data-state="ready">
-                <img src="assets/Cabai_panen.png" alt="Ready-to-harvest chili plant">
-            </div>
-            <div class="plant turmeric" draggable="true" data-type="turmeric" data-state="ready">
-                <img src="assets/Kunyit.png" alt="Ready-to-harvest turmeric">
-            </div>
-            <div class="plant carrot" draggable="true" data-type="carrot" data-state="ready">
-                <img src="assets/carrot.png" alt="Ready-to-harvest carrot">
-            </div>
+      <!-- Garden Background -->
+      <div class="garden">
+        <!-- Pre-planted plants -->
+        <div
+          class="plant chili"
+          draggable="true"
+          data-type="chili"
+          data-state="ready"
+        >
+          <img
+            src="assets/Cabai_panen.png"
+            alt="Ready-to-harvest chili plant"
+          />
         </div>
+        <div
+          class="plant turmeric"
+          draggable="true"
+          data-type="turmeric"
+          data-state="ready"
+        >
+          <img src="assets/Kunyit.png" alt="Ready-to-harvest turmeric" />
+        </div>
+        <div
+          class="plant carrot"
+          draggable="true"
+          data-type="carrot"
+          data-state="ready"
+        >
+          <img src="assets//pohon_caroot.png" alt="Ready-to-harvest carrot" />
+        </div>
+      </div>
 
-        <!-- Basket -->
-        <div class="basket" id="basket">
-            <!-- <img src="assets/basket.png" alt=""> -->
-        </div>
+      <!-- Basket -->
+      <div class="basket" id="basket">
+        <!-- <img src="assets/basket.png" alt=""> -->
+      </div>
+
+      <div id="transition-screen" class="hidden">
+        <p>Preparing the next phase...</p>
+      </div>
+
+      <!-- Harvesting Completed Popup -->
+      <div id="harvest-popup" class="popup hidden">
+        <p>You have finished harvesting!</p>
+        <button id="next-phase-btn">Continue to Planting</button>
+      </div>
     </div>
+    
 
     <script src="js/game.js"></script>
-</body>
+  </body>
 </html>
