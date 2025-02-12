@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cut the Carrot</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container-cutting">
+        <h2>Prepare the Ingredients</h2>
+        <p>Drag the carrot onto the cutting board, then use the knife to cut it.</p>
+
+        <!-- Cutting Board (Drop Zone) -->
+        <div class="cutting-board" id="cutting-board">
+            <img src="assets/Board.png" alt="Cutting Board">
+        </div>
+
+        <!-- Carrot (Draggable) -->
+        <div class="carrot" id="carrot" draggable="true">
+            <img src="assets/whole_carrot.png" alt="Whole Carrot">
+        </div>
+
+        <!-- Knife (Draggable, but only after placing carrot) -->
+        <div class="knife disabled" id="knife" draggable="true">
+            <img src="assets/knife.png" alt="Knife">
+        </div>
+
+        <!-- Transition Screen -->
+        <div id="transition-screen2" class="hidden">
+            <p>Cutting Complete! Moving to the next phase...</p>
+        </div>
+
+        <div id="cutting-done-popup" class="popup hidden">
+            <p>Cutting is done! Time to cook!</p>
+            <button id="continue-button">Continue</button>
+          </div>
+          
+    </div>
+
+    <script src="js/cutting.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cutscene 2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="cutscene-container">
+        <img id="scene-image" src="assets/cutscene4.PNG" alt="Cutscene Image">
+        <div id="scene-text">...</div>
+        <button id="next-button">Lanjut</button>
+    </div>
+
+    <script>
+        const scenes = [
+            { text: "Nenek: Terima kasih sudah membantu menanam, cucuku!", img: "assets/cutscene4.PNG" },
+            { text: "Nenek: Oh iya, nenek hampir lupa...", img: "assets/cutscene5.PNG" },
+            { text: "Nenek: Tolong bantu nenek memasak di dapur, ya!", img: "assets/cutscene6.PNG" }
+        ];
+
+        let currentScene = 0;
+        const sceneText = document.getElementById("scene-text");
+        const sceneImage = document.getElementById("scene-image");
+        const nextButton = document.getElementById("next-button");
+
+        function updateScene() {
+            if (currentScene < scenes.length) {
+                sceneText.innerText = scenes[currentScene].text;
+                sceneImage.src = scenes[currentScene].img;
+                currentScene++;
+            } else {
+                startTransition();
+            }
+        }
+
+        function startTransition() {
+            const transitionScreen = document.createElement("div");
+            transitionScreen.id = "transition-screen2"; // Changed ID
+            transitionScreen.innerText = "Memasuki Dapur...";
+            document.body.appendChild(transitionScreen);
+
+            setTimeout(() => {
+                window.location.href = "sorting.html"; // Redirect to cooking phase
+            }, 2000);
+        }
+
+        nextButton.addEventListener("click", updateScene);
+        updateScene(); // Start with the first scene
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container-cooking">
+        <h2>Cook the Tempe!</h2>
+        <p>Drag and drop all ingredients into the pan before time runs out!</p>
+
+        <!-- Timer -->
+        <div id="timer">Time Left: <span id="time-left">15</span>s</div>
+
+        <!-- Pan (Drop Zone) -->
+        <div class="pan" id="pan">
+            <img id="pan" src="assets/pan.png" alt="pan">
+        </div>
+
+        <!-- Ingredients (Draggable) -->
+        <div class="ingredients">
+            <div class="ingredient chili-pepper" id="chili" draggable="true">
+                <img src="assets/chili_pepper.png" alt="Chili">
+            </div>
+            <div class="ingredient garlic-pepper" id="garlic" draggable="true">
+                <img src="assets/garlic.png" alt="Garlic">
+            </div>
+            <div class="ingredient onion-pepper" id="onion" draggable="true">
+                <img src="assets/onion.png" alt="Onion">
+            </div>
+            <div class="ingredient soy-sauce-pepper" id="soy-sauce" draggable="true">
+                <img src="assets/soy sauce.png" alt="Soy Sauce">
+            </div>
+        </div>
+
+        <!-- Result Popup -->
+        <div id="result-popup" class="popup hidden">
+            <p id="result-message"></p>
+            <button id="restart-button">Try Again</button>
+        </div>
+    </div>
+
+    <script src="js/cooking.js"></script>
+</body>
+</html>
