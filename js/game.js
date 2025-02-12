@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function () {
     preloadImage("assets/Cabai_gundul.png");
     preloadImage("assets/turmeric.png");
     preloadImage("assets/carrot.png");
+    preloadImage("assets/Carrot_cabut.png");
+    preloadImage("assets/kunyit_cabut.png");
 
     plants.forEach((plant) => {
         plant.addEventListener("dragstart", dragStart);
@@ -43,10 +45,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     : "assets/Cabai_gundul.png";
                 break;
             case "turmeric":
-                dragImageSrc = "assets/turmeric.png";
+                dragImageSrc = "assets/kunyit_cabut.png";
                 break;
             case "carrot":
-                dragImageSrc = "assets/carrot.png";
+                dragImageSrc = "assets/Carrot_cabut.png";
                 break;
         }
 
