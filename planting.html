@@ -10,7 +10,8 @@
     <div class="game-container">
       <div class="garden">
         <h2>Waktunya Bertanam</h2>
-        <p>Tarik benih ke kotak yang tersedia sesuai dengan jenis tanamanyya</p>
+        <p>Tarik benih ke kotak yang tersedia sesuai dengan jenis tanamanya</p>
+        
         <div class="plant chili undraggable">
           <img src="assets/Cabai_gundul.png" alt="chili plant" />
         </div>
@@ -31,11 +32,19 @@
         <div class="watering-can" draggable="true">
           <img src="assets/Watering _can.png" alt="Watering Can" />
         </div>
+
+        <!-- Custom Popup Modal -->
+        <div id="custom-modal" class="modal">
+          <div class="modal-content">
+            <p id="modal-text"></p>
+            <button id="modal-close">OK</button>
+          </div>
+        </div>
+        
       </div>
     </div>
 
-    <iframe src="audio.html" id="music-frame" style="display:none;"></iframe>
-
+    <iframe src="audio.html" id="music-frame" style="display: none"></iframe>
 
     <script src="js/planting.js"></script>
   </body>

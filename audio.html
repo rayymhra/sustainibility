@@ -15,7 +15,11 @@
         // Check if music was playing before
         window.addEventListener("DOMContentLoaded", function () {
             if (localStorage.getItem("musicPlaying") === "true") {
-                bgMusic.play();
+                bgMusic.play().then(() => {
+                    parent.postMessage("musicStarted", "*");
+                }).catch(() => {
+                    console.warn("Autoplay blocked, waiting for user interaction.");
+                });
             }
         });
 
@@ -24,16 +28,19 @@
             if (event.data === "playMusic") {
                 bgMusic.play();
                 localStorage.setItem("musicPlaying", "true");
+                parent.postMessage("musicStarted", "*");
             } else if (event.data === "pauseMusic") {
                 bgMusic.pause();
                 localStorage.setItem("musicPlaying", "false");
+                parent.postMessage("musicStopped", "*");
             }
         });
 
-        // Allow user interaction to enable autoplay
+        // Ensure music starts when the user interacts
         document.addEventListener("click", function () {
             if (localStorage.getItem("musicPlaying") === "true") {
                 bgMusic.play();
+                parent.postMessage("musicStarted", "*");
             }
         });
     </script>

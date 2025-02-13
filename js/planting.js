@@ -68,10 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
       plantedSeeds++;
 
       if (plantedSeeds === 2) {
-        alert("All seeds are planted! Now, water them with the watering can.");
+        showPopup("Semua benih telah ditanam, Lanjut berikan air!");
       }
     } else {
-      alert("Wrong spot! Try again.");
+      showPopup("Salah benih, coba lagi!");
     }
   }
 
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function wateringCanDragStart(event) {
     if (plantedSeeds < 2) {
       event.preventDefault();
-      alert("Plant both seeds first!");
+      showPopup("Tanamlah semua benih terlebih dahulu!");
       return;
     }
 
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const spotType = plantingSpot.dataset.target; // Get the correct plant type
 
     if (!spotType) {
-      alert("Error: Undefined plant type.");
+      showPopup("Bagian ini tidak bisa ditanami!");
       return;
     }
 
@@ -124,13 +124,36 @@ document.addEventListener("DOMContentLoaded", function () {
 
       wateredSpots[spotType] = true;
 
-      alert(`${spotType} has been watered!`);
+      // showPopup(`${spotType} telah diberi air!`);
 
       if (Object.keys(wateredSpots).length === 2) {
-        setTimeout(startTransition, 1500);
+        showPopup("Kerja bagus, Lanjut...", startTransition);
       }
     } else {
-      alert("This spot is already watered!");
+      showPopup("Bagian ini sudah ditanami, jangan terlalu banyak air!");
     }
   }
 });
+
+function showPopup(message, callback = null) {
+  const modal = document.getElementById("custom-modal");
+  const modalText = document.getElementById("modal-text");
+  const modalClose = document.getElementById("modal-close");
+
+  modalText.textContent = message;
+  modal.style.display = "block";
+
+  modalClose.onclick = function () {
+    modal.style.display = "none";
+    if (callback) callback();
+  };
+
+  // Close the modal if the user clicks outside the content
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+      if (callback) callback();
+    }
+  };
+}
+
