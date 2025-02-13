@@ -4,7 +4,7 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #f7e4c6;
+  background-color: #f7e8d0;
   margin: 0;
   padding: 0;
 }
@@ -51,16 +51,116 @@ button:active {
   transform: scale(1.1);
 }
 
+/* WIN LOSE */
+/* 🧸 Cozy Container */
 .game-over,
 .win-screen {
-  margin-top: 10%;
+  margin: 50px auto;
+  text-align: center;
+  font-family: "Poppins", "Quicksand", sans-serif; /* Soft & cozy font */
+  background: linear-gradient(to bottom, #ffecd1, #ffc8c8); /* Warm pastel gradient */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 600px;
+  border: 3px solid #f4a8a8;
+  transition: transform 0.3s ease-in-out;
 }
 
+.win-screen {
+  background: linear-gradient(to bottom, #d8f3dc, #b7e4c7); /* Cozy green for winning */
+  border-color: #a3d9a5;
+}
+
+/* 🍪 Soft Heading Style */
+.game-over h1,
+.win-screen h1 {
+  font-size: 28px;
+  color: #5c4a3d; /* Warm brown */
+  margin-bottom: 15px;
+}
+
+/* ☁️ Soft Image Styling */
 .game-over img,
 .win-screen img {
-  width: 300px;
+  width: 80%;
+  max-width: 500px;
   margin: 20px 0;
+  border-radius: 25px;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1);
+  border: 4px solid #ffb3b3; /* Soft warm pink */
+  transition: transform 0.3s ease-in-out;
+  background: white;
+  padding: 5px;
 }
+
+.win-screen img {
+  border-color: #92c89b; /* Soft green border for winning */
+}
+
+.game-over img:hover,
+.win-screen img:hover {
+  transform: scale(1.03);
+}
+
+/* 🥞 Cozy Paragraph */
+.game-over p,
+.win-screen p {
+  font-size: 18px;
+  color: #5c4a3d;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  border-radius: 15px;
+  display: inline-block;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 🍯 Soft Button Style */
+.game-over button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: #f4a8a8; /* Warm pink for the button */
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.win-screen button {
+  background: #92c89b; /* Soft green for win */
+}
+
+.game-over button:hover {
+  background: #e48b8b; /* Slightly darker pink */
+  transform: scale(1.07);
+}
+
+.win-screen button:hover {
+  background: #7bbf83; /* Slightly deeper green */
+}
+
+/* ✨ Subtle Glow Effect */
+@keyframes cozy-glow {
+  0% {
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  100% {
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.game-over,
+.win-screen {
+  animation: cozy-glow 2s infinite alternate;
+}
+
+
 
 .fade-out {
   opacity: 0;

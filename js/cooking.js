@@ -58,7 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (won) {
             window.location.href = "win.html"; // Redirect to win scene
         } else {
-            tempe.src = "assets/burnt_tempe.png"; // Change to burnt tempe image
+            const pan = document.getElementById("pan").querySelector("img"); // Target the pan's image
+            pan.src = "assets/burnt_pan.png"; // Change to a pan with burnt tempe
             console.log("Game Lost! Redirecting soon..."); // Debugging log
     
             setTimeout(() => {
@@ -66,5 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }, 1000);
         }
     }
+    
     
 });

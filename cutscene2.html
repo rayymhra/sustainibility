@@ -12,6 +12,8 @@
         <div id="scene-text">...</div>
         <button id="next-button">Lanjut</button>
     </div>
+    <iframe src="audio.html" id="music-frame" style="display:none;"></iframe>
+
 
     <script>
         const scenes = [
@@ -42,7 +44,7 @@
             document.body.appendChild(transitionScreen);
 
             setTimeout(() => {
-                window.location.href = "sorting.html"; // Redirect to cooking phase
+                window.location.href = "cutting.html"; // Redirect to cooking phase
             }, 2000);
         }
 

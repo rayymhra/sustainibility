@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Background Music</title>
+</head>
+<body>
+    <audio id="bg-music" loop>
+        <source src="assets/Masakan Hangat.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        let bgMusic = document.getElementById("bg-music");
+
+        // Check if music was playing before
+        window.addEventListener("DOMContentLoaded", function () {
+            if (localStorage.getItem("musicPlaying") === "true") {
+                bgMusic.play();
+            }
+        });
+
+        // Listen for play/pause commands from other pages
+        window.addEventListener("message", function (event) {
+            if (event.data === "playMusic") {
+                bgMusic.play();
+                localStorage.setItem("musicPlaying", "true");
+            } else if (event.data === "pauseMusic") {
+                bgMusic.pause();
+                localStorage.setItem("musicPlaying", "false");
+            }
+        });
+
+        // Allow user interaction to enable autoplay
+        document.addEventListener("click", function () {
+            if (localStorage.getItem("musicPlaying") === "true") {
+                bgMusic.play();
+            }
+        });
+    </script>
+</body>
+</html>
