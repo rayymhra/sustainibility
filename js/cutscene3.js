@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const dialogueText = document.getElementById("dialogue-text");
-    const sceneImg = document.getElementById("scene-img");
-    const nextButton = document.getElementById("next-button");
+    const dialogueText = document.getElementById("dialogue-text-three");
+    const sceneImg = document.getElementById("scene-img-three");
+    const nextButton = document.getElementById("next-button-three");
 
     let currentScene = 0;
     const scenes = [
         { text: "Makasih!", img: "assets/grandma_thank_you.png" },
-        { text: "Sekarang tolong bantuin masak!", img: "assets/grandma_cooking_request.png" }
+        { text: "Sekarang tolong bantuin masak!", img: "assets/cutscene8.PNG" }
     ];
 
     nextButton.addEventListener("click", function () {
