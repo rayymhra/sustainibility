@@ -6,14 +6,14 @@
     <title>Cutscene 2</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <div class="cutscene-container">
-        <img id="scene-image" src="assets/cutscene4.PNG" alt="Cutscene Image">
-        <div id="scene-text">...</div>
-        <button id="next-button">Lanjut</button>
+<body class="cozy-background-two">
+    <div class="cutscene-container-two">
+        <img id="scene-image-two" class="cutscene-image-two" src="assets/cutscene4.PNG" alt="Cutscene Image">
+        <div id="scene-text-two" class="cutscene-text-two">...</div>
+        <button id="next-button-two" class="next-button-two">Lanjut</button>
     </div>
-    <iframe src="audio.html" id="music-frame" style="display:none;"></iframe>
 
+    <iframe src="audio.html" id="music-frame" style="display:none;"></iframe>
 
     <script>
         const scenes = [
@@ -23,9 +23,9 @@
         ];
 
         let currentScene = 0;
-        const sceneText = document.getElementById("scene-text");
-        const sceneImage = document.getElementById("scene-image");
-        const nextButton = document.getElementById("next-button");
+        const sceneText = document.getElementById("scene-text-two");
+        const sceneImage = document.getElementById("scene-image-two");
+        const nextButton = document.getElementById("next-button-two");
 
         function updateScene() {
             if (currentScene < scenes.length) {
@@ -39,12 +39,12 @@
 
         function startTransition() {
             const transitionScreen = document.createElement("div");
-            transitionScreen.id = "transition-screen2"; // Changed ID
+            transitionScreen.id = "transition-screen-two"; 
             transitionScreen.innerText = "Memasuki Dapur...";
             document.body.appendChild(transitionScreen);
 
             setTimeout(() => {
-                window.location.href = "cutting.html"; // Redirect to cooking phase
+                window.location.href = "cutting.html";
             }, 2000);
         }
 

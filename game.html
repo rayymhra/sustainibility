@@ -10,6 +10,12 @@
     <div class="game-container">
       <!-- Garden Background -->
       <div class="garden">
+        <div class="garden-container-harvest">
+          <h2 class="garden-title-harvest">Waktunya Panen</h2>
+          <p class="garden-instruction-harvest">
+            Tarik tanaman yang siap panen ke tampah!
+          </p>
+        </div>
         <!-- Pre-planted plants -->
         <div
           class="plant chili"
@@ -55,13 +61,14 @@
 
       <!-- Harvesting Completed Popup -->
       <div id="harvest-popup" class="popup hidden">
-        <p>Hore! Panen sudah selesai! Ayo kita tanam lagi, biar hasilnya makin banyak!</p>
+        <p>
+          Hore! Panen sudah selesai! Ayo kita tanam lagi, biar hasilnya makin
+          banyak!
+        </p>
         <button id="next-phase-btn">Tanam Lagi Yuk!</button>
       </div>
     </div>
-    <iframe src="audio.html" id="music-frame" style="display:none;"></iframe>
-
-    
+    <iframe src="audio.html" id="music-frame" style="display: none"></iframe>
 
     <script src="js/game.js"></script>
   </body>

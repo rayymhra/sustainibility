@@ -58,7 +58,11 @@ button:active {
   margin: 50px auto;
   text-align: center;
   font-family: "Poppins", "Quicksand", sans-serif; /* Soft & cozy font */
-  background: linear-gradient(to bottom, #ffecd1, #ffc8c8); /* Warm pastel gradient */
+  background: linear-gradient(
+    to bottom,
+    #ffecd1,
+    #ffc8c8
+  ); /* Warm pastel gradient */
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
@@ -68,7 +72,11 @@ button:active {
 }
 
 .win-screen {
-  background: linear-gradient(to bottom, #d8f3dc, #b7e4c7); /* Cozy green for winning */
+  background: linear-gradient(
+    to bottom,
+    #d8f3dc,
+    #b7e4c7
+  ); /* Cozy green for winning */
   border-color: #a3d9a5;
 }
 
@@ -159,8 +167,6 @@ button:active {
 .win-screen {
   animation: cozy-glow 2s infinite alternate;
 }
-
-
 
 .fade-out {
   opacity: 0;
@@ -283,6 +289,7 @@ button:active {
 .plant {
   position: absolute;
   cursor: grab;
+  transition: all 0.3s ease;
 }
 
 .chili {
@@ -292,6 +299,11 @@ button:active {
   height: 300px;
 }
 
+.chili:hover {
+  filter: drop-shadow(3px 0 0 white) drop-shadow(0 3px 0 white)
+    drop-shadow(-3px 0 0 white) drop-shadow(0 -3px 0 white);
+}
+
 .turmeric {
   top: 440px;
   left: 510px;
@@ -299,11 +311,21 @@ button:active {
   height: 150px;
 }
 
+.turmeric:hover {
+  filter: drop-shadow(3px 0 0 white) drop-shadow(0 3px 0 white)
+    drop-shadow(-3px 0 0 white) drop-shadow(0 -3px 0 white);
+}
+
 .carrott {
   top: 540px;
   left: 750px;
   width: 50px;
   height: 50px;
+}
+
+.carrott:hover {
+  filter: drop-shadow(3px 0 0 white) drop-shadow(0 3px 0 white)
+    drop-shadow(-3px 0 0 white) drop-shadow(0 -3px 0 white);
 }
 
 .plant img {
@@ -360,6 +382,11 @@ button:active {
   position: absolute;
   top: 615px;
   left: 1200px;
+  transition: all 0.3s ease;
+}
+
+.turmeric-seed:hover {
+  transform: scale(1.1);
 }
 
 .turmeric-seed img {
@@ -371,6 +398,11 @@ button:active {
   position: absolute;
   top: 600px;
   left: 1090px;
+  transition: all 0.3s ease;
+}
+
+.carrot-seed:hover {
+  transform: scale(1.1);
 }
 
 .carrot-seed img {
@@ -465,7 +497,6 @@ button:active {
   z-index: 100;
 }
 
-
 /* BACKGROUND TAMBAHAN */
 .character-background {
   position: absolute;
@@ -487,6 +518,11 @@ button:active {
   top: 600px;
   left: 1000px;
   cursor: grab;
+  transition: all 0.3s ease;
+}
+
+.watering-can:hover {
+  transform: scale(1.1);
 }
 
 .watering-can img {
@@ -573,7 +609,7 @@ button:active {
 }
 
 #continue-btn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -679,7 +715,6 @@ button:active {
   z-index: 10;
 }
 
-
 .game-container-cutting {
   position: relative;
   width: 100vw;
@@ -693,7 +728,7 @@ button:active {
 /* CUTSCENE 3 */
 .cutscene-container {
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -727,7 +762,6 @@ button:active {
   font-size: 16px;
   cursor: pointer;
 }
-
 
 /* COOKING */
 .game-container-cooking {
@@ -779,7 +813,7 @@ button:active {
 
 .onion-pepper {
   right: 0;
-  bottom: 230px;  
+  bottom: 230px;
   width: 120px;
 }
 
@@ -839,4 +873,188 @@ button:active {
 
 #modal-close:hover {
   background-color: #218838;
+}
+
+/* CUTSCENE 2 */
+/* 🌸 Cozy Background */
+.cozy-background-two {
+  background-color: #fceee3; /* Warm pastel color */
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* 📖 Cutscene Container */
+.cutscene-container-two {
+  background-color: #fff6eb;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+}
+
+/* 🌿 Cutscene Image */
+.cutscene-image-two {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* 📝 Cutscene Text */
+.cutscene-text-two {
+  font-size: 18px;
+  margin: 15px 0;
+  color: #5a4033;
+  background-color: #ffe6cc;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* 🌟 Next Button */
+.next-button-two {
+  background-color: #ffb998;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.next-button-two:hover {
+  background-color: #ff916c;
+}
+
+/* ✨ Transition Screen */
+#transition-screen-two {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  animation: fadeOut 2s forwards;
+}
+
+/* ⏳ Fade Out Animation */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* INSTRUCTION */
+/* 🪵 Shared Styling for Containers */
+.garden-container-planting,
+.garden-container-harvest {
+  background: rgba(255, 239, 214, 0.849); /* Semi-transparent warm beige */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  width: 80%;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+/* 🌱 Planting Section */
+.garden-title-planting {
+  font-size: 26px;
+  color: #5a4033;
+}
+
+.garden-instruction-planting {
+  font-size: 18px;
+  color: #6b4f3f;
+}
+
+/* 🌾 Harvest Section */
+.garden-title-harvest {
+  font-size: 26px;
+  color: #4a362b;
+}
+
+.garden-instruction-harvest {
+  font-size: 18px;
+  color: #5a3e30;
+}
+
+/* ✨ Interactive Hover Effects */
+.garden-container-planting:hover,
+.garden-container-harvest:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 🥕 Shared Styling for Containers */
+.cutting-container-ingredients,
+.cooking-container-prepare {
+  background: rgba(255, 250, 245, 0.95); /* Soft cream white */
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  width: 80%;
+  max-width: 600px;
+  border: 2px solid #f4c2c2; /* Soft pink border */
+  margin-top: 20px;
+}
+
+/* 🍊 Ingredients Section */
+.cutting-title-ingredients {
+  font-size: 26px;
+  color: #d27d6f; /* Warm muted red */
+}
+
+.cutting-instruction-ingredients {
+  font-size: 18px;
+  color: #a55c4f;
+}
+
+/* 🍳 Cooking Section */
+.cooking-title-prepare {
+  font-size: 26px;
+  color: #c96e50; /* Cozy brown-orange */
+}
+
+.cooking-instruction-prepare {
+  font-size: 18px;
+  color: #915042;
+}
+
+/* 🕰️ Timer Styling */
+.timer-prepare {
+  font-size: 18px;
+  font-weight: bold;
+  color: #b34e35; /* Deep red-orange */
+  background: rgba(255, 220, 220, 0.9);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: inline-block;
+  border: 2px solid #ffb6b9; /* Soft pink */
+}
+
+/* ✨ Interactive Hover Effects */
+.cutting-container-ingredients:hover,
+.cooking-container-prepare:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
