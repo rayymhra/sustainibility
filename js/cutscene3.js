@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let currentScene = 0;
     const scenes = [
-        { text: "Makasih!", img: "assets/grandma_thank_you.png" },
-        { text: "Sekarang tolong bantuin masak!", img: "assets/cutscene8.PNG" }
+        { text: "Makasih!", img: "assets/cutscene9.png" },
+        { text: "Sekarang tolong bantuin masak ya", img: "assets/cutscene10.png" }
     ];
 
     nextButton.addEventListener("click", function () {

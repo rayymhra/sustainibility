@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             scenes[currentScene].classList.add("fade"); // Show current scene
             console.log(`Showing Scene: ${currentScene}`); // Debugging log
             currentScene++;
-            setTimeout(showNextScene, 3000); // Change scene every 3 seconds
+            setTimeout(showNextScene, 4000); // Change scene every 3 seconds
         } else {
             setTimeout(() => {
                 window.location.href = "game.html"; // Move to next game part
