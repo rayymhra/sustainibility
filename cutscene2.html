@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="cozy-background-two">
+    <!-- Cutscene Container -->
     <div class="cutscene-container-two">
         <img id="scene-image-two" class="cutscene-image-two" src="assets/cutscene4.PNG" alt="Cutscene Image">
         <div id="scene-text-two" class="cutscene-text-two">...</div>
@@ -15,17 +16,21 @@
 
 
     <script>
+        // Array of scenes with text and corresponding image
         const scenes = [
             { text: "Nenek: Terima kasih sudah membantu menanam, cucuku!", img: "assets/cutscene6.PNG" },
             { text: "Nenek: Oh iya, nenek hampir lupa...", img: "assets/cutscene7.PNG" },
             { text: "Nenek: Tolong bantu nenek memasak di dapur, ya!", img: "assets/cutscene8.PNG" }
         ];
 
-        let currentScene = 0;
+        let currentScene = 0; // Index to track the current scene
+
+        // Get references to the scene text, image, and next button elements
         const sceneText = document.getElementById("scene-text-two");
         const sceneImage = document.getElementById("scene-image-two");
         const nextButton = document.getElementById("next-button-two");
 
+        // Function to update the scene text and image  
         function updateScene() {
             if (currentScene < scenes.length) {
                 sceneText.innerText = scenes[currentScene].text;
@@ -36,6 +41,7 @@
             }
         }
 
+        // Function to start the transition to the next page
         function startTransition() {
             const transitionScreen = document.createElement("div");
             transitionScreen.id = "transition-screen-two"; 
@@ -47,6 +53,7 @@
             }, 2000);
         }
 
+        // Add event listener to the next button
         nextButton.addEventListener("click", updateScene);
         updateScene(); // Start with the first scene
     </script>

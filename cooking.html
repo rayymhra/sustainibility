@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cooking Game</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to external CSS file for styling -->
 </head>
 <body>
     <div class="game-container-cooking">
+        <!-- Game Title and Instructions -->
         <div class="cooking-container-prepare">
             <h2 class="cooking-title-prepare">Bantu nenek masak Tempe Orek</h2>
             <p class="cooking-instruction-prepare">Tarik semua bahan ke dalam penggorengan sebelum waktunya habis!</p>
@@ -23,15 +24,19 @@
 
         <!-- Ingredients (Draggable) -->
         <div class="ingredients">
+            <!-- Chili Pepper -->
             <div class="ingredient chili-pepper" id="chili" draggable="true">
                 <img src="assets/chili_pepper.png" alt="Chili">
             </div>
+            <!-- Garlic -->
             <div class="ingredient garlic-pepper" id="garlic" draggable="true">
                 <img src="assets/garlic.png" alt="Garlic">
             </div>
+            <!-- Onion -->
             <div class="ingredient onion-pepper" id="onion" draggable="true">
                 <img src="assets/onion.png" alt="Onion">
             </div>
+            <!-- Soy Sauce -->
             <div class="ingredient soy-sauce-pepper" id="soy-sauce" draggable="true">
                 <img src="assets/soy sauce.png" alt="Soy Sauce">
             </div>
@@ -44,7 +49,7 @@
         </div>
     </div>
 
-
+    <!-- Link to external JavaScript file for game logic -->
     <script src="js/cooking.js"></script>
 </body>
 </html>

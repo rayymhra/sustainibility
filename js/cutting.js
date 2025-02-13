@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "assets/sliced_carrot.png",
   ];
 
+
   // Enable dragging for the carrot
   carrot.addEventListener("dragstart", function (event) {
     event.dataTransfer.setData("text/plain", "carrot");
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       carrotPlaced = true;
       knife.classList.remove("disabled"); // Enable knife
 
-      console.log("Carrot placed on board!");
+      console.log("Wortel diletakkan di talenan!");
     }
   });
 
@@ -45,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
   knife.addEventListener("dragstart", function (event) {
     if (!carrotPlaced) {
       event.preventDefault();
-      alert("Place the carrot on the cutting board first!");
+      alert("Taruh wortel di talenan dulu!");
       return;
     }
     event.dataTransfer.setData("text/plain", "knife");
@@ -72,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500);
       }
     } else {
-      alert("Use the knife to cut!");
+      alert("Gunakan pisau untuk memotong wortel!");
     }
   });
   continueButton.addEventListener("click", function () {

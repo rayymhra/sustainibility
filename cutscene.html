@@ -1,39 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cutscene</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Link to external CSS file for styling -->
+  </head>
+  <body>
+    <!-- Container for the cutscene sequence -->
     <div id="cutscene-container">
-        <div class="cutscene-frame fade" id="scene1">
-            <img src="assets/cutscene1.png" alt="Protagonist arriving at the bus terminal">
-            <p>Intan telah selesai kuliah dan ia pun pulang ke kampung halamannya...</p>
-        </div>
-        <div class="cutscene-frame" id="scene2">
-            <img src="assets/cutscene2.png" alt="Protagonist riding a public transport">
-            <p>Dia naik bis umum menuju desa di lereng gunung...</p>
-        </div>
-        <div class="cutscene-frame" id="scene3">
-            <img src="assets/cutscene3.png" alt="Arriving at Grandma's House">
-            <p>Di sana, nenek dan keluarganya sudah menunggunya pulang...</p>
-        </div>
-        <div class="cutscene-frame" id="scene4">
-            <img src="assets/cutscene4.PNG" alt="Grandmother smiling">
-            <p>Mereka ingin mengadakan acara Slametan dan memasak nasi tumpeng sebagai tanda syukur karena Intan telah menamatkan kuliahnya...</p>
-        </div>
-        <div class="cutscene-frame" id="scene5">
-            <img src="assets/cutscene5.PNG" alt="Grandmother smiling">
-            <p>Esok paginya, Intan pergi ke pekarangan rumah untuk memanen beberapa bahan masakan</p>
-        </div>
+      <!-- Cutscene frames -->
+      <div class="cutscene-frame fade" id="scene1">
+        <img
+          src="assets/cutscene1.png"
+          alt="Protagonist arriving at the bus terminal"
+        />
+        <p>
+          Intan telah selesai kuliah dan ia pun pulang ke kampung halamannya...
+        </p>
+      </div>
+      <div class="cutscene-frame" id="scene2">
+        <img
+          src="assets/cutscene2.png"
+          alt="Protagonist riding a public transport"
+        />
+        <p>Dia naik bis umum menuju desa di lereng gunung...</p>
+      </div>
+      <div class="cutscene-frame" id="scene3">
+        <img src="assets/cutscene3.png" alt="Arriving at Grandma's House" />
+        <p>Di sana, nenek dan keluarganya sudah menunggunya pulang...</p>
+      </div>
+      <div class="cutscene-frame" id="scene4">
+        <img src="assets/cutscene4.PNG" alt="Grandmother smiling" />
+        <p>
+          Mereka ingin mengadakan acara Slametan dan memasak nasi tumpeng
+          sebagai tanda syukur karena Intan telah menamatkan kuliahnya...
+        </p>
+      </div>
+      <div class="cutscene-frame" id="scene5">
+        <img src="assets/cutscene5.PNG" alt="Grandmother smiling" />
+        <p>
+          Esok paginya, Intan pergi ke pekarangan rumah untuk memanen beberapa
+          bahan masakan
+        </p>
+      </div>
     </div>
 
+    <!-- Button to skip the cutscene -->
     <button id="skip-button">Skip</button>
 
-
-
+    <!-- Link to external JavaScript file for the cutscene -->
     <script src="js/cutscene.js"></script>
-</body>
+  </body>
 </html>
